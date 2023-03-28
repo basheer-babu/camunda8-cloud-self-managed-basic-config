@@ -1,6 +1,6 @@
 zeebe:
   client:
-    broker.gateway-address: 10.0.0.65:26500
+    broker.gateway-address: 127.0.0.1:26500
     security.plaintext: true
 
 #camunda.tasklist:
