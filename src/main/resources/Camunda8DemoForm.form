@@ -1,0 +1,26 @@
+{
+  "components": [
+    {
+      "label": "Name",
+      "type": "textfield",
+      "id": "Field_0ol9qqy",
+      "key": "name",
+      "disabled": false
+    },
+    {
+      "label": "Designation",
+      "type": "textfield",
+      "id": "Field_169b31e",
+      "key": "designation"
+    }
+  ],
+  "type": "default",
+  "id": "Form_18lrzyw",
+  "executionPlatform": "Camunda Cloud",
+  "executionPlatformVersion": "8.1.0",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.5.0"
+  },
+  "schemaVersion": 5
+}

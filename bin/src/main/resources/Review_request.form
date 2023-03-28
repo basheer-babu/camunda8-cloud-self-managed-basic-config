@@ -1,0 +1,56 @@
+{
+  "components": [
+    {
+      "label": "Star Date",
+      "type": "textfield",
+      "id": "Field_0ylbkfc",
+      "key": "startDate",
+      "description": "Format - DD.MM.YYYY"
+    },
+    {
+      "label": "End Date",
+      "type": "textfield",
+      "id": "Field_1vk9fs1",
+      "key": "endDate",
+      "description": "Format - DD.MM.YYYY"
+    },
+    {
+      "label": "Comment",
+      "type": "textfield",
+      "id": "Field_1mesubn",
+      "key": "comment"
+    },
+    {
+      "values": [
+        {
+          "label": "Approved",
+          "value": "approved"
+        },
+        {
+          "label": "Rejected",
+          "value": "rejected"
+        },
+        {
+          "label": "Additional Information",
+          "value": "additional"
+        }
+      ],
+      "label": "Decision",
+      "type": "radio",
+      "id": "Field_1hr16al",
+      "key": "decision",
+      "validate": {
+        "required": true
+      }
+    }
+  ],
+  "type": "default",
+  "id": "Form_0ntznhg",
+  "executionPlatform": "Camunda Cloud",
+  "executionPlatformVersion": "8.1.0",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.5.0"
+  },
+  "schemaVersion": 5
+}

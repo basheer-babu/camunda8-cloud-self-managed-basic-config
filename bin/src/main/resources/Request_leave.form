@@ -1,0 +1,33 @@
+{
+  "components": [
+    {
+      "label": "Star Date",
+      "type": "textfield",
+      "id": "Field_0pkaotd",
+      "key": "startDate",
+      "description": "Format - DD.MM.YYYY"
+    },
+    {
+      "label": "End Date",
+      "type": "textfield",
+      "id": "Field_1uzjshb",
+      "key": "endDate",
+      "description": "Format - DD.MM.YYYY"
+    },
+    {
+      "label": "Comment",
+      "type": "textfield",
+      "id": "Field_0cuuch6",
+      "key": "comment"
+    }
+  ],
+  "type": "default",
+  "id": "Form_02i5qlh",
+  "executionPlatform": "Camunda Cloud",
+  "executionPlatformVersion": "8.1.0",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.5.0"
+  },
+  "schemaVersion": 5
+}

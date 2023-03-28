@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:zeebe="http://camunda.org/schema/zeebe/1.0" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_1jxkjol" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="5.5.0" modeler:executionPlatform="Camunda Cloud" modeler:executionPlatformVersion="8.1.0">
+  <bpmn:process id="ID_Demo1" name="Camunda8Demo" isExecutable="true">
+    <bpmn:extensionElements>
+      <zeebe:userTaskForm id="userTaskForm_33j77s5">{
+  "components": [
+    {
+      "label": "Name",
+      "type": "textfield",
+      "id": "Field_0ol9qqy",
+      "key": "name",
+      "disabled": false
+    },
+    {
+      "label": "Designation",
+      "type": "textfield",
+      "id": "Field_169b31e",
+      "key": "designation"
+    }
+  ],
+  "type": "default",
+  "id": "Form_18lrzyw",
+  "executionPlatform": "Camunda Cloud",
+  "executionPlatformVersion": "8.1.0",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.5.0"
+  },
+  "schemaVersion": 5
+}</zeebe:userTaskForm>
+    </bpmn:extensionElements>
+    <bpmn:startEvent id="StartEvent_1" name="Start">
+      <bpmn:outgoing>Flow_10bts7e</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:sequenceFlow id="Flow_10bts7e" sourceRef="StartEvent_1" targetRef="ID_UserTask" />
+    <bpmn:sequenceFlow id="Flow_1yqv4on" sourceRef="ID_UserTask" targetRef="ID_ServiceTask" />
+    <bpmn:endEvent id="Event_16im54u" name="End">
+      <bpmn:incoming>Flow_0m4k1ks</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flow_0m4k1ks" sourceRef="ID_ServiceTask" targetRef="Event_16im54u" />
+    <bpmn:userTask id="ID_UserTask" name="User Task">
+      <bpmn:extensionElements>
+        <zeebe:formDefinition formKey="camunda-forms:bpmn:userTaskForm_33j77s5" />
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_10bts7e</bpmn:incoming>
+      <bpmn:outgoing>Flow_1yqv4on</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:serviceTask id="ID_ServiceTask" name="Service Task">
+      <bpmn:extensionElements>
+        <zeebe:taskDefinition type="logRequest" />
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_1yqv4on</bpmn:incoming>
+      <bpmn:outgoing>Flow_0m4k1ks</bpmn:outgoing>
+    </bpmn:serviceTask>
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="ID_Demo1">
+      <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_1">
+        <dc:Bounds x="179" y="99" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="185" y="142" width="24" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_16im54u_di" bpmnElement="Event_16im54u">
+        <dc:Bounds x="592" y="99" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="600" y="142" width="20" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0eb3ovq_di" bpmnElement="ID_UserTask">
+        <dc:Bounds x="270" y="77" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0lphcmb_di" bpmnElement="ID_ServiceTask">
+        <dc:Bounds x="430" y="77" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_10bts7e_di" bpmnElement="Flow_10bts7e">
+        <di:waypoint x="215" y="117" />
+        <di:waypoint x="270" y="117" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0m4k1ks_di" bpmnElement="Flow_0m4k1ks">
+        <di:waypoint x="530" y="117" />
+        <di:waypoint x="592" y="117" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1yqv4on_di" bpmnElement="Flow_1yqv4on">
+        <di:waypoint x="370" y="117" />
+        <di:waypoint x="430" y="117" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>
